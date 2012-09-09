@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<EventGhost Name="Configuration Tree" Expanded="True" Version="1462" Guid="{917D44F8-07A1-4697-9641-62FE0E05B258}" Time="1289508048.6">
+    <Autostart Name="Autostart" Expanded="True">
+        <Plugin Enabled="False" File="PS3" Identifier="PS3">
+            gAIoWAAAAABxAIiJiImJRz/TMzMzMzMzRz/gAAAAAAAAR0AUAAAAAAAAR0BOAAAAAAAAiVV8XFw/XGhpZCN7MDAwMDExMjQtMDAwMC0xMDAwLTgwMDAtMDA4MDVmOWIzNGZifV92aWQmMDAwMjA1NGNfcGlkJjAzMDYjOSY1MzE0ZGRmJjAmMDAwMCN7NGQxZTU1YjItZjE2Zi0xMWNmLTg4Y2ItMDAxMTExMDAwMDMwfXEBTUwFWB8AAABTb255IENvbXB1dGVyIEVudGVydGFpbm1lbnQgSW5jcQJNBgNYEQAAAEJEIFJlbW90ZSBDb250cm9scQNLAHRxBC4=
+        </Plugin>
+        <Plugin File="XBMC" Identifier="XBMC">
+            gAIpLg==
+        </Plugin>
+        <Plugin File="HID" Identifier="HID">
+            gAIoWAAAAABxAIiJiFWCXFw/XGhpZCN7MDAwMDExMjQtMDAwMC0xMDAwLTgwMDAtMDA4MDVmOWIzNGZifV92aWQmMDAwMjE1MGFfcGlkJjEyMDAmY29sMDIjOCZkODJiMTBiJjAmMDAwMSN7NGQxZTU1YjItZjE2Zi0xMWNmLTg4Y2ItMDAxMTExMDAwMDMwfXEBTQoVWAQAAABUaVZvcQJNABJYFAAAAFRpVm8gS2V5Ym9hcmQgUmVtb3RlcQNLAIlLAHRxBC4=
+        </Plugin>
+    </Autostart>
+    <Macro Name="Enable exclusive: dvbplus" id="6">
+        <Event Name="HID.Red" />
+        <Action>
+            EventGhost.EnableExclusive(XmlIdLink(109))
+        </Action>
+        <Action>
+            Window.FindWindow(u'DVBPlusApp.exe', None, None, None, None, None, False, 0.0, 2)
+        </Action>
+        <Action>
+            EventGhost.NewJumpIf(XmlIdLink(23), 0, False)
+        </Action>
+        <Action>
+            System.Execute(u'C:\\Program Files\\DVBPlus\\DVBPlusApp.exe', u'', 0, False, 2, u'')
+        </Action>
+        <Action>
+            EventGhost.Wait(8.0)
+        </Action>
+        <Action>
+            Window.SendKeys(u'{Tabulator}', False)
+        </Action>
+    </Macro>
+    <Macro Name="Enable exclusive: XBMC" id="14">
+        <Event Name="HID.Green" />
+        <Event Name="HID.Button.141" />
+        <Action>
+            EventGhost.EnableExclusive(XmlIdLink(234))
+        </Action>
+        <Action>
+            Window.FindWindow(u'XBMC.exe', None, None, None, None, None, False, 0.0, 2)
+        </Action>
+        <Action>
+            EventGhost.NewJumpIf(XmlIdLink(26), 0, False)
+        </Action>
+        <Action>
+            System.Execute(u'C:\\Program Files (x86)\\XBMC\\XBMC.exe', u'-fs', 0, False, 2, u'C:\\Program Files (x86)\\XBMC')
+        </Action>
+        <Action>
+            EventGhost.Wait(2.0)
+        </Action>
+        <Action>
+            EventGhost.NewJumpIf(XmlIdLink(26), 2, False)
+        </Action>
+    </Macro>
+    <Macro Name="Bring to Front DVBPlus" id="23">
+        <Action>
+            Window.FindWindow(u'DVBPlusApp.exe', None, None, None, None, None, False, 0.0, 2)
+        </Action>
+        <Action>
+            Window.BringToFront()
+        </Action>
+    </Macro>
+    <Macro Name="Bring to Front XBMC" id="26" Expanded="True">
+        <Action>
+            Window.FindWindow(u'XBMC.exe', None, None, None, None, None, False, 0.0, 2)
+        </Action>
+        <Action>
+            Window.BringToFront()
+        </Action>
+    </Macro>
+    <Folder Name="Context Folder" Expanded="True">
+        <Folder Name="Mouse Emulation" Enabled="False">
+            <Macro Name="Mouse Move Up">
+                <Event Name="Up" />
+                <Event Name="Num2" />
+                <Action>
+                    Mouse.GoDirection(0)
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move RightUp">
+                <Event Name="Num3" />
+                <Action>
+                    Mouse.GoDirection(45)
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move Right">
+                <Event Name="Right" />
+                <Event Name="Num6" />
+                <Action>
+                    Mouse.GoDirection(90)
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move RightDown">
+                <Event Name="Num9" />
+                <Action>
+                    Mouse.GoDirection(u'135')
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move Down">
+                <Event Name="Down" />
+                <Event Name="Num8" />
+                <Action>
+                    Mouse.GoDirection(u'180')
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move LeftDown">
+                <Event Name="Num7" />
+                <Action>
+                    Mouse.GoDirection(225)
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move Left">
+                <Event Name="Left" />
+                <Event Name="Num4" />
+                <Action>
+                    Mouse.GoDirection(270)
+                </Action>
+            </Macro>
+            <Macro Name="Mouse Move LeftUp">
+                <Event Name="Num1" />
+                <Action>
+                    Mouse.GoDirection(315)
+                </Action>
+            </Macro>
+            <Macro Name="Left Mouse Button">
+                <Event Name="X10.Rename" />
+                <Action>
+                    Mouse.LeftButton()
+                </Action>
+            </Macro>
+            <Macro Name="Right Mouse Button">
+                <Event Name="X10.Snapshot" />
+                <Action>
+                    Mouse.RightButton()
+                </Action>
+            </Macro>
+        </Folder>
+        <Folder Name="Keyboard Emulation" Enabled="False">
+            <Macro Name="Up">
+                <Event Name="Up" />
+                <Action>
+                    Window.SendKeys(u'{Up}')
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Down">
+                <Event Name="Down" />
+                <Action>
+                    Window.SendKeys(u'{Down}')
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Right">
+                <Event Name="Right" />
+                <Action>
+                    Window.SendKeys(u'{Right}')
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Left">
+                <Event Name="Left" />
+                <Action>
+                    Window.SendKeys(u'{Left}')
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Ok -&gt; Enter Key">
+                <Event Name="Ok" />
+                <Action>
+                    Window.SendKeys(u'{Enter}')
+                </Action>
+            </Macro>
+            <Macro Name="Delete -&gt; Escape Key">
+                <Event Name="Delete" />
+                <Action>
+                    Window.SendKeys(u'{Esc}')
+                </Action>
+            </Macro>
+            <Macro Name="Power -&gt; Alt+F4" Enabled="False">
+                <Event Name="Power" />
+                <Action>
+                    Window.SendKeys(u'{Alt+F4}')
+                </Action>
+            </Macro>
+            <Macro Name="Forward -&gt; Tabulator">
+                <Event Name="Forward" />
+                <Action>
+                    Window.SendKeys(u'{Tab}')
+                </Action>
+            </Macro>
+            <Macro Name="Rewind -&gt; Shift+Tabulator">
+                <Event Name="Rewind" />
+                <Action>
+                    Window.SendKeys(u'{Shift+Tab}')
+                </Action>
+            </Macro>
+            <Macro Name="ChannelUp -&gt; Plus">
+                <Event Name="ChannelUp" />
+                <Action>
+                    Window.SendKeys(u'+')
+                </Action>
+            </Macro>
+            <Macro Name="ChannelDown -&gt; Minus">
+                <Event Name="ChannelDown" />
+                <Action>
+                    Window.SendKeys(u'-')
+                </Action>
+            </Macro>
+            <Macro Name="Rename -&gt; Start Menu">
+                <Event Name="Rename" />
+                <Action>
+                    Window.SendKeys(u'{Win}')
+                </Action>
+            </Macro>
+            <Macro Name="Play -&gt; Space">
+                <Event Name="Play" />
+                <Action>
+                    Window.SendKeys(u'{Space}')
+                </Action>
+            </Macro>
+        </Folder>
+        <Folder Name="dvbplus" id="109" Enabled="False">
+            <Macro Name="EPG: g">
+                <Event Name="HID.TopMenu" />
+                <Event Name="MceRemote.Guide" />
+                <Action>
+                    Window.SendKeys(u'g', False)
+                </Action>
+            </Macro>
+            <Macro Name="Full Screen: {Tabulator}">
+                <Event Name="MceRemote.Green" />
+                <Event Name="HID.Zarbi" />
+                <Action>
+                    Window.SendKeys(u'{Tabulator}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Options: o">
+                <Event Name="MceRemote.DVDMenu" />
+                <Action>
+                    Window.SendKeys(u'o', False)
+                </Action>
+            </Macro>
+            <Macro Name="Toggle Recording: r">
+                <Event Name="MceRemote.Record" />
+                <Action>
+                    Window.SendKeys(u'r', False)
+                </Action>
+            </Macro>
+            <Macro Name="Info: i">
+                <Event Name="MceRemote.Details" />
+                <Event Name="HID.Display" />
+                <Action>
+                    Window.SendKeys(u'i', False)
+                </Action>
+            </Macro>
+            <Macro Name="Last Channel: l">
+                <Event Name="MceRemote.Back" />
+                <Event Name="HID.Return" />
+                <Action>
+                    Window.SendKeys(u'l', False)
+                </Action>
+            </Macro>
+            <Macro Name="Select: {Enter}">
+                <Event Name="MceRemote.Ok" />
+                <Event Name="HID.Enter" />
+                <Action>
+                    Window.SendKeys(u'{Enter}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Up: {Up}">
+                <Event Name="MceRemote.Up" />
+                <Event Name="MceRemote.ChannelUp" />
+                <Event Name="HID.Up" />
+                <Action>
+                    Window.SendKeys(u'{Up}', False)
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Down: {Down}">
+                <Event Name="MceRemote.Down" />
+                <Event Name="MceRemote.ChannelDown" />
+                <Event Name="HID.Down" />
+                <Action>
+                    Window.SendKeys(u'{Down}', False)
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Left / Volume Down: {Left}">
+                <Event Name="MceRemote.Left" />
+                <Event Name="HID.Left" />
+                <Action>
+                    Window.SendKeys(u'{Left}', False)
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Right / Volume Up: {Right}">
+                <Event Name="MceRemote.Right" />
+                <Event Name="HID.Right" />
+                <Action>
+                    Window.SendKeys(u'{Right}', False)
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Page Up: {PageUp}">
+                <Event Name="MceRemote.Blue" />
+                <Event Name="HID.L1" />
+                <Action>
+                    Window.SendKeys(u'{PageUp}', False)
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Page Down: {PageDown}">
+                <Event Name="MceRemote.Yellow" />
+                <Event Name="HID.R1" />
+                <Action>
+                    Window.SendKeys(u'{PageDown}', False)
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Minimize &amp; Mute: {F12}">
+                <Action>
+                    Window.SendKeys(u'{F12}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Toggle Menu/Status: {F1}">
+                <Action>
+                    Window.SendKeys(u'{F1}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Toggle Scheduler: {F2}">
+                <Action>
+                    Window.SendKeys(u'{F2}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Task Manager: {LCtrl+LShift+Escape}">
+                <Action>
+                    Window.SendKeys(u'{LCtrl+LShift+Escape}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Package: {Escape}">
+                <Event Name="MceRemote.Red" />
+                <Event Name="HID.PopUpMenu" />
+                <Event Name="MceRemote.Star" />
+                <Action>
+                    Window.SendKeys(u'{Escape}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 0">
+                <Event Name="HID.Num0" />
+                <Event Name="MceRemote.Num0" />
+                <Action>
+                    Window.SendKeys(u'0', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 1">
+                <Event Name="MceRemote.Num1" />
+                <Event Name="HID.Num1" />
+                <Action>
+                    Window.SendKeys(u'1', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 2">
+                <Event Name="MceRemote.Num2" />
+                <Event Name="HID.Num2" />
+                <Action>
+                    Window.SendKeys(u'2', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 3">
+                <Event Name="HID.Num3" />
+                <Event Name="MceRemote.Num3" />
+                <Action>
+                    Window.SendKeys(u'3', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 4">
+                <Event Name="MceRemote.Num4" />
+                <Event Name="HID.Num4" />
+                <Action>
+                    Window.SendKeys(u'4', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 5">
+                <Event Name="MceRemote.Num5" />
+                <Event Name="HID.Num5" />
+                <Action>
+                    Window.SendKeys(u'5', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 6">
+                <Event Name="MceRemote.Num6" />
+                <Event Name="HID.Num6" />
+                <Action>
+                    Window.SendKeys(u'6', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 7">
+                <Event Name="MceRemote.Num7" />
+                <Event Name="HID.Num7" />
+                <Action>
+                    Window.SendKeys(u'7', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 8">
+                <Event Name="HID.Num8" />
+                <Event Name="MceRemote.Num8" />
+                <Action>
+                    Window.SendKeys(u'8', False)
+                </Action>
+            </Macro>
+            <Macro Name="Number 9">
+                <Event Name="MceRemote.Num9" />
+                <Event Name="HID.Num9" />
+                <Action>
+                    Window.SendKeys(u'9', False)
+                </Action>
+            </Macro>
+            <Macro Name="Emulate Keystrokes: {Enter}" Enabled="False">
+                <Event Name="MceRemote.Enter" />
+                <Action>
+                    Window.SendKeys(u'{Enter}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Close">
+                <Event Name="MceRemote.Escape" />
+                <Event Name="HID.Clear" />
+                <Action>
+                    Window.Close()
+                </Action>
+            </Macro>
+            <Macro Name="Emulate Keystrokes: {Alt+Tabulator}">
+                <Event Name="MceRemote.7BB2" />
+                <Action>
+                    Window.SendKeys(u'{Alt+Tabulator}', False)
+                </Action>
+            </Macro>
+            <Macro Name="Emulate Keystrokes: m">
+                <Event Name="HID.Audio" />
+                <Action>
+                    Window.SendKeys(u'm', False)
+                </Action>
+            </Macro>
+        </Folder>
+        <Folder Name="XBMC" id="234" Expanded="True">
+            <Macro Name="Up">
+                <Event Name="HID.Up" />
+                <Event Name="HID.Button.66" />
+                <Action>
+                    XBMC.Up()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Down">
+                <Event Name="HID.Down" />
+                <Event Name="HID.Button.67" />
+                <Action>
+                    XBMC.Down()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Left">
+                <Event Name="HID.Left" />
+                <Event Name="HID.Button.68" />
+                <Action>
+                    XBMC.Left()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Right">
+                <Event Name="HID.Right" />
+                <Event Name="HID.Button.69" />
+                <Action>
+                    XBMC.Right()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Page Up">
+                <Event Name="HID.L1" />
+                <Event Name="HID.Button.156" />
+                <Action>
+                    XBMC.PageUp()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Page Down">
+                <Event Name="HID.R1" />
+                <Event Name="HID.Button.157" />
+                <Action>
+                    XBMC.PageDown()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Select">
+                <Event Name="HID.Enter" />
+                <Event Name="HID.Button.65" />
+                <Action>
+                    XBMC.Select()
+                </Action>
+            </Macro>
+            <Macro Name="Previous Menu">
+                <Event Name="HID.Return" />
+                <Event Name="HID.Button.182" />
+                <Action>
+                    XBMC.PreviousMenu()
+                </Action>
+            </Macro>
+            <Macro Name="Context Menu">
+                <Event Name="HID.Triangle" />
+                <Event Name="HID.Button.108" />
+                <Action>
+                    XBMC.ContextMenu()
+                </Action>
+            </Macro>
+            <Macro Name="Play">
+                <Event Name="HID.Play" />
+                <Event Name="HID.Button.176" />
+                <Action>
+                    XBMC.Play()
+                </Action>
+            </Macro>
+            <Macro Name="Pause">
+                <Event Name="HID.Pause" />
+                <Event Name="HID.Button.177" />
+                <Action>
+                    XBMC.Pause()
+                </Action>
+            </Macro>
+            <Macro Name="Stop">
+                <Event Name="HID.Stop" />
+                <Event Name="HID.Button.245" />
+                <Action>
+                    XBMC.Stop()
+                </Action>
+            </Macro>
+            <Macro Name="Fast Forward">
+                <Event Name="HID.Scan+" />
+                <Event Name="HID.Button.179" />
+                <Action>
+                    XBMC.FastForward()
+                </Action>
+                <Action>
+                    EventGhost.JumpIfLongPress(1.5, XmlIdLink(299))
+                </Action>
+            </Macro>
+            <Macro Name="Rewind" Expanded="True">
+                <Event Name="HID.Scan-" />
+                <Event Name="HID.Button.180" />
+                <Action>
+                    XBMC.Rewind()
+                </Action>
+                <Action>
+                    EventGhost.JumpIfLongPress(1.5, XmlIdLink(302))
+                </Action>
+            </Macro>
+            <Macro Name="Skip Next" id="299">
+                <Event Name="HID.Next" />
+                <Action>
+                    XBMC.SkipNext()
+                </Action>
+            </Macro>
+            <Macro Name="Skip Previous" id="302">
+                <Event Name="HID.Prev" />
+                <Action>
+                    XBMC.SkipPrevious()
+                </Action>
+            </Macro>
+            <Macro Name="Record">
+                <Action>
+                    XBMC.Record()
+                </Action>
+            </Macro>
+            <Macro Name="Big Skip Backward">
+                <Action>
+                    XBMC.BigSkipBackward()
+                </Action>
+            </Macro>
+            <Macro Name="Big Skip Forward">
+                <Action>
+                    XBMC.BigSkipForward()
+                </Action>
+            </Macro>
+            <Macro Name="Small Skip Backward">
+                <Event Name="HID.SlowStep-" />
+                <Action>
+                    XBMC.SmallSkipBackward()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Small Skip Forward">
+                <Event Name="HID.SlowStep+" />
+                <Action>
+                    XBMC.SmallSkipForward()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Aspect Ratio" Expanded="True">
+                <Event Name="HID.Angle" />
+                <Event Name="HID.Button.109" />
+                <Action>
+                    XBMC.AspectRatio()
+                </Action>
+            </Macro>
+            <Macro Name="Codec Info">
+                <Event Name="HID.010000FFFFFFFFFFFF01" />
+                <Action>
+                    XBMC.CodecInfo()
+                </Action>
+            </Macro>
+            <Macro Name="Full Screen" Expanded="True">
+                <Event Name="HID.Zarbi" />
+                <Event Name="HID.Button.130" />
+                <Action>
+                    XBMC.FullScreen()
+                </Action>
+            </Macro>
+            <Macro Name="Repeat">
+                <Action>
+                    XBMC.Repeat()
+                </Action>
+            </Macro>
+            <Macro Name="Show Subtitles">
+                <Event Name="HID.Subtitle" />
+                <Action>
+                    XBMC.ShowSubtitles()
+                </Action>
+            </Macro>
+            <Macro Name="Show Time">
+                <Event Name="HID.Time" />
+                <Action>
+                    XBMC.ShowTime()
+                </Action>
+            </Macro>
+            <Macro Name="Volume Up">
+                <Event Name="HID.L2" />
+                <Action>
+                    XBMC.VolumeUp()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Volume Down">
+                <Event Name="HID.L3" />
+                <Action>
+                    XBMC.VolumeDown()
+                </Action>
+                <Action>
+                    EventGhost.AutoRepeat(0.59999999999999998, 0.29999999999999999, 0.01, 3.0)
+                </Action>
+            </Macro>
+            <Macro Name="Mute">
+                <Event Name="HID.Audio" />
+                <Action>
+                    XBMC.Mute()
+                </Action>
+            </Macro>
+            <Macro Name="Scroll Up">
+                <Event Name="HID.R2" />
+                <Action>
+                    XBMC.ScrollUp()
+                </Action>
+            </Macro>
+            <Macro Name="Scroll Down">
+                <Event Name="HID.R3" />
+                <Action>
+                    XBMC.ScrollDown()
+                </Action>
+            </Macro>
+            <Macro Name="Close">
+                <Action>
+                    XBMC.Close()
+                </Action>
+            </Macro>
+            <Macro Name="Number 0">
+                <Event Name="HID.Num0" />
+                <Action>
+                    XBMC.Number0()
+                </Action>
+            </Macro>
+            <Macro Name="Number 1">
+                <Event Name="HID.Num1" />
+                <Action>
+                    XBMC.Number1()
+                </Action>
+            </Macro>
+            <Macro Name="Number 2">
+                <Event Name="HID.Num2" />
+                <Action>
+                    XBMC.Number2()
+                </Action>
+            </Macro>
+            <Macro Name="Number 3">
+                <Event Name="HID.Num3" />
+                <Action>
+                    XBMC.Number3()
+                </Action>
+            </Macro>
+            <Macro Name="Number 4">
+                <Event Name="HID.Num4" />
+                <Action>
+                    XBMC.Number4()
+                </Action>
+            </Macro>
+            <Macro Name="Number 5">
+                <Event Name="HID.Num5" />
+                <Action>
+                    XBMC.Number5()
+                </Action>
+            </Macro>
+            <Macro Name="Number 6">
+                <Event Name="HID.Num6" />
+                <Action>
+                    XBMC.Number6()
+                </Action>
+            </Macro>
+            <Macro Name="Number 7">
+                <Event Name="HID.Num7" />
+                <Action>
+                    XBMC.Number7()
+                </Action>
+            </Macro>
+            <Macro Name="Number 8">
+                <Event Name="HID.Num8" />
+                <Action>
+                    XBMC.Number8()
+                </Action>
+            </Macro>
+            <Macro Name="Number 9">
+                <Event Name="HID.Num9" />
+                <Action>
+                    XBMC.Number9()
+                </Action>
+            </Macro>
+            <Macro Name="Playlist">
+                <Action>
+                    XBMC.Playlist()
+                </Action>
+            </Macro>
+            <Macro Name="Queue" Expanded="True">
+                <Event Name="HID.Square" />
+                <Event Name="HID.Button.178" />
+                <Action>
+                    XBMC.Queue()
+                </Action>
+            </Macro>
+            <Macro Name="Move Item Up">
+                <Action>
+                    XBMC.MoveItemUp()
+                </Action>
+            </Macro>
+            <Macro Name="Move Item Down">
+                <Action>
+                    XBMC.MoveItemDown()
+                </Action>
+            </Macro>
+            <Macro Name="Delete" Expanded="True">
+                <Event Name="HID.Cross" />
+                <Event Name="HID.Button.181" />
+                <Action>
+                    XBMC.Delete()
+                </Action>
+            </Macro>
+            <Macro Name="Random">
+                <Action>
+                    XBMC.Random()
+                </Action>
+            </Macro>
+            <Macro Name="Repeat">
+                <Action>
+                    XBMC.Repeat()
+                </Action>
+            </Macro>
+            <Macro Name="Party Mode">
+                <Action>
+                    XBMC.PartyMode()
+                </Action>
+            </Macro>
+            <Macro Name="Parent Dir">
+                <Event Name="HID.Circle" />
+                <Event Name="HID.Button.131" />
+                <Action>
+                    XBMC.ParentDir()
+                </Action>
+            </Macro>
+            <Macro Name="Info">
+                <Event Name="HID.Display" />
+                <Event Name="HID.Button.521" />
+                <Action>
+                    XBMC.Info()
+                </Action>
+            </Macro>
+            <Macro Name="Take Screen Shot">
+                <Action>
+                    XBMC.TakeScreenShot()
+                </Action>
+            </Macro>
+            <Macro Name="Eject Tray">
+                <Event Name="HID.Eject" />
+                <Action>
+                    XBMC.EjectTray()
+                </Action>
+            </Macro>
+            <Macro Name="Play DVD">
+                <Action>
+                    XBMC.PlayDVD()
+                </Action>
+            </Macro>
+            <Macro Name="Show Home Screen">
+                <Event Name="HID.TopMenu" />
+                <Action>
+                    XBMC.Home()
+                </Action>
+            </Macro>
+            <Macro Name="Show Videos Screen">
+                <Action>
+                    XBMC.MyVideos()
+                </Action>
+            </Macro>
+            <Macro Name="Show Music Screen">
+                <Action>
+                    XBMC.MyMusic()
+                </Action>
+            </Macro>
+            <Macro Name="Show Pictures Screen">
+                <Action>
+                    XBMC.MyPictures()
+                </Action>
+            </Macro>
+            <Macro Name="Show Weather Screen">
+                <Action>
+                    XBMC.Weather()
+                </Action>
+            </Macro>
+            <Macro Name="Show Settings Screen">
+                <Action>
+                    XBMC.Settings()
+                </Action>
+            </Macro>
+            <Macro Name="Show Favorites Screen">
+                <Action>
+                    XBMC.Favorites()
+                </Action>
+            </Macro>
+            <Macro Name="Show System Info Screen">
+                <Action>
+                    XBMC.SystemInfo()
+                </Action>
+            </Macro>
+            <Macro Name="Last FM Love">
+                <Event Name="HID.Blue" />
+                <Event Name="HID.Button.106" />
+                <Action>
+                    XBMC.LastFMLove()
+                </Action>
+            </Macro>
+            <Macro Name="Last FM Ban">
+                <Event Name="HID.Yellow" />
+                <Event Name="HID.Button.105" />
+                <Action>
+                    XBMC.LastFMBan()
+                </Action>
+            </Macro>
+            <Macro Name="Update Video Library">
+                <Action>
+                    XBMC.UpdateVideoLibrary()
+                </Action>
+            </Macro>
+            <Macro Name="Update Music Library">
+                <Action>
+                    XBMC.UpdateMusicLibrary()
+                </Action>
+            </Macro>
+            <Macro Name="Show Shutdown Menu">
+                <Event Name="HID.Clear" />
+                <Action>
+                    XBMC.ShutdownMenu()
+                </Action>
+            </Macro>
+            <Macro Name="Quit XBMC">
+                <Action>
+                    XBMC.Quit()
+                </Action>
+            </Macro>
+            <Macro Name="Shutdown Computer">
+                <Action>
+                    XBMC.Shutdown()
+                </Action>
+            </Macro>
+            <Macro Name="Powerdown Computer">
+                <Action>
+                    XBMC.Powerdown()
+                </Action>
+            </Macro>
+            <Macro Name="Suspend Computer">
+                <Action>
+                    XBMC.Suspend()
+                </Action>
+            </Macro>
+            <Macro Name="Hibernate Computer">
+                <Action>
+                    XBMC.Hibernate()
+                </Action>
+            </Macro>
+            <Macro Name="Reset Computer">
+                <Action>
+                    XBMC.Reset()
+                </Action>
+            </Macro>
+        </Folder>
+    </Folder>
+    <Folder Name="Other Examples" Enabled="False">
+        <Folder Name="State Folder Example">
+            <Folder Name="Folder1" id="468">
+                <Macro Name="Enable other Folder" />
+            </Folder>
+            <Folder Name="Folder2" Enabled="False">
+                <Macro Name="Enable other Folder">
+                    <Event Name="Blue" />
+                    <Action>
+                        EventGhost.EnableExclusive(XmlIdLink(475))
+                    </Action>
+                    <Action>
+                        EventGhost.StopProcessing()
+                    </Action>
+                </Macro>
+            </Folder>
+            <Folder Name="Folder3" id="475" Enabled="False">
+                <Macro Name="Enable other Folder">
+                    <Event Name="Blue" />
+                    <Action>
+                        EventGhost.EnableExclusive(XmlIdLink(468))
+                    </Action>
+                    <Action>
+                        EventGhost.StopProcessing()
+                    </Action>
+                </Macro>
+            </Folder>
+        </Folder>
+        <Folder Name="State Macro Example">
+            <Macro Name="State1" id="481" Enabled="False">
+                <Event Name="Green" />
+                <Action>
+                    EventGhost.DisableItem(XmlIdLink(481))
+                </Action>
+                <Action>
+                    EventGhost.EnableItem(XmlIdLink(487))
+                </Action>
+                <Action Enabled="False">
+                    System.MonitorPowerOff()
+                </Action>
+                <Action>
+                    EventGhost.StopProcessing()
+                </Action>
+            </Macro>
+            <Macro Name="State2" id="487">
+                <Event Name="Green" />
+                <Action>
+                    EventGhost.EnableItem(XmlIdLink(481))
+                </Action>
+                <Action>
+                    EventGhost.DisableItem(XmlIdLink(487))
+                </Action>
+                <Action>
+                    System.MonitorPowerOn()
+                </Action>
+                <Action>
+                    EventGhost.StopProcessing()
+                </Action>
+            </Macro>
+        </Folder>
+        <Folder Name="State Macro Example 2">
+            <Macro Name="Macro1" id="494" Enabled="False">
+                <Event Name="Yellow" />
+                <Action>
+                    EventGhost.EnableExclusive(XmlIdLink(498))
+                </Action>
+                <Action>
+                    EventGhost.StopProcessing()
+                </Action>
+            </Macro>
+            <Macro Name="Macro2" id="498" Enabled="False">
+                <Event Name="Yellow" />
+                <Action>
+                    EventGhost.EnableExclusive(XmlIdLink(502))
+                </Action>
+                <Action>
+                    EventGhost.StopProcessing()
+                </Action>
+            </Macro>
+            <Macro Name="Macro3" id="502">
+                <Event Name="Yellow" />
+                <Action>
+                    EventGhost.EnableExclusive(XmlIdLink(494))
+                </Action>
+                <Action>
+                    EventGhost.StopProcessing()
+                </Action>
+            </Macro>
+        </Folder>
+    </Folder>
+    <Macro Name="Disable: Enable exclusive: dvbplus" Enabled="False">
+        <Event Name="HID.Start" />
+        <Action>
+            EventGhost.JumpIfLongPress(3.0, XmlIdLink(513))
+        </Action>
+        <Action>
+            EventGhost.DisableItem(XmlIdLink(6))
+        </Action>
+        <Action>
+            EventGhost.DisableItem(XmlIdLink(14))
+        </Action>
+        <Action>
+            EventGhost.DisableItem(XmlIdLink(109))
+        </Action>
+        <Action>
+            EventGhost.DisableItem(XmlIdLink(234))
+        </Action>
+    </Macro>
+    <Macro Name="Enable: Enable exclusive: dvbplus" id="513" Enabled="False">
+        <Action>
+            EventGhost.EnableItem(XmlIdLink(6))
+        </Action>
+        <Action>
+            EventGhost.EnableItem(XmlIdLink(14))
+        </Action>
+    </Macro>
+    <Macro Name="Emulate Keystrokes: {Alt+Tabulator}">
+        <Event Name="HID.210000FFFFFFFFFFFF01" />
+        <Action>
+            Window.SendKeys(u'{Alt+Tabulator}', False)
+        </Action>
+    </Macro>
+    <Macro Name="Emulate Keystrokes: {Shift+Alt+Tabulator}">
+        <Event Name="HID.810000FFFFFFFFFFFF01" />
+        <Action>
+            Window.SendKeys(u'{Shift+Alt+Tabulator}', False)
+        </Action>
+    </Macro>
+</EventGhost>

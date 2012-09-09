@@ -1,0 +1,6 @@
+This is an outdated php/mysql app that I made for nEoStreams Inc.  
+It took me 1 day to throw this together for my boss as I was being 
+rushed.  It did the job and was used until I completely revamped 
+their system for them.  This application allowed clients to change 
+settings for their shoutcast/icecast streams.
+
